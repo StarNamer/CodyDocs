@@ -10,7 +10,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TextManager.Interop;
 using Task = System.Threading.Tasks.Task;
 
-namespace CodyDocs.Commands
+namespace CodyDocs
 {
     /// <summary>
     /// Command handler
@@ -185,7 +185,11 @@ namespace CodyDocs.Commands
             return _applicationObject.ActiveDocument.FullName;
         }
 
-
+        private void ShowAddDocumentationWindow(string documentPath, TextViewSelection seletion)
+        {
+            var documentationControl = new AddDocumentationWindow();
+            documentationControl.ShowDialog();
+        }
 
         /// <summary>
         /// This function is the callback used to execute the command when the menu item is clicked.
@@ -199,7 +203,7 @@ namespace CodyDocs.Commands
             ThreadHelper.ThrowIfNotOnUIThread();
             TextViewSelection selection = GetSelection();
             string activeDocumentPath = GetActiveDocumentFilePath();
-            ////ShowAddDocumentationWindow(activeDocumentPath, selection);
+            ShowAddDocumentationWindow(activeDocumentPath, selection);
         }
     }
 }

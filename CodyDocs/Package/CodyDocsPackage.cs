@@ -15,7 +15,7 @@ using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.Win32;
 using Task = System.Threading.Tasks.Task;
 
-namespace CodyDocs.Commands
+namespace CodyDocs
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -73,8 +73,8 @@ namespace CodyDocs.Commands
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            await CodyDocs.Commands.EnableDisableCodyDocsCommand.InitializeAsync(this);
-            await CodyDocs.Commands.DocumentCodeSpanCommand.InitializeAsync(this);
+            await EnableDisableCodyDocsCommand.InitializeAsync(this);
+            await DocumentCodeSpanCommand.InitializeAsync(this);
         }
 
         #endregion
