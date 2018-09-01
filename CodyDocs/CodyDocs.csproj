@@ -54,6 +54,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Commands\DocumentCodeSpanCommand.cs" />
     <Compile Include="Commands\EnableDisableCodyDocsCommand.cs" />
     <Compile Include="Package\CodyDocsPackage.cs" />
     <Compile Include="GeneralSettings.Designer.cs">
@@ -79,6 +80,7 @@
     <VSCTCompile Include="Package\CodyDocsPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
+    <Content Include="Resources\DocumentCodeSpanCommand.png" />
     <Content Include="Resources\EnableDisableCodyDocsCommand.png" />
     <Content Include="Resources\CodyDocsPackage.ico" />
     <Content Include="index.html" />
